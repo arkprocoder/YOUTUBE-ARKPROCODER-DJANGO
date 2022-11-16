@@ -1,0 +1,22 @@
+body {
+    background-image: url('../images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.img-thumbnail {
+    padding: 1.25rem;
+    background-color: black;
+    border: 2px solid green;
+    border-radius: 21.25rem;
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    color: white;
+    font-size: large;
+}
+#gp{
+    width: 100%;
+}

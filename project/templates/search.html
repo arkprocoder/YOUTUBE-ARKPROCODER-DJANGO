@@ -1,0 +1,35 @@
+{% extends 'base.html' %} 
+{% block title %}Search{% endblock title %} 
+{% block body %}
+<div class="container mt-4">
+  <h2 class="text-center">Search Results</h2>
+  <br />
+  {% if allPosts|length < 1%}
+  Your Search <b>{{query}} did not match</b>
+  <ul>
+  <li>Make Sure You have Spelled Correct</li>
+  </ul>
+  {% endif %}
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 bg-light">
+
+  {% for post in allPosts %}
+    <div class="col">
+      <div class="card">
+       <a href="{{post.img.url}}">  <img src="{{post.img.url}}" class="card-img-top" alt="..." /> </a>
+        <div class="card-body">
+          <h5 class="card-title">{{post.title}}</h5>
+          <p class="card-text">
+           {{post.description}}
+          </p>
+          <hr>
+          <p>Posted By : <b>{{post.authname}}</b></p>
+          <p>TimeStamp : <b>{{post.timeStamp}}</b></p>
+        </div>
+      </div>
+    </div>
+   {% endfor %}
+  </div>
+</div>
+
+{% endblock body %}
